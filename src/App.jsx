@@ -84,7 +84,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-sapphire/80 via-transparent to-transparent z-10" />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-12 md:py-20 flex flex-col justify-center">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -93,9 +93,9 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 bg-champagne/20 text-champagne px-5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md border border-champagne/30">
             <Award size={14} fill="currentColor" /> 
-            <span>The Gold Standard in Healthcare</span>
+            <span className="text-[10px] sm:text-xs">The Gold Standard in Healthcare</span>
           </div>
-          <h1 className="text-6xl lg:text-8xl font-playfair font-bold leading-[1.1] tracking-tight">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-playfair font-bold leading-[1.1] tracking-tight">
             Precision Care.<br />
             <span className="text-champagne italic">Uncompromising Luxury.</span>
           </h1>
@@ -261,7 +261,7 @@ const ExperienceSection = () => {
           className="relative"
         >
           <img 
-            src="https://images.unsplash.com/photo-1519494026892-80bbd1e24a94?auto=format&fit=crop&q=80&w=1000" 
+            src="https://images.unsplash.com/photo-1516549655169-d77becc2a9bb?auto=format&fit=crop&q=80&w=1000" 
             alt="Medical Technology" 
             className="rounded-[3rem] shadow-2xl"
           />
