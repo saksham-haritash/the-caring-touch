@@ -74,13 +74,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-sapphire/90 to-transparent z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1629909606777-1c77773a6f3a?auto=format&fit=crop&q=80&w=2000" 
+          src="https://images.unsplash.com/photo-1631217815622-137f9d3f71a0?auto=format&fit=crop&q=80&w=2000" 
           alt="Luxury Clinic Interior" 
           className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-12">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
