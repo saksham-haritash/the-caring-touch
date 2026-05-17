@@ -33,9 +33,9 @@ const Navbar = () => {
           <a href="#services" className="text-slate hover:text-sapphire transition-colors font-medium">Services</a>
           <a href="#about" className="text-slate hover:text-sapphire transition-colors font-medium">Experience</a>
           <a href="#testimonials" className="text-slate hover:text-sapphire transition-colors font-medium">Stories</a>
-          <button className="bg-sapphire text-arctic px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-sapphire-light transition-all active:scale-95 shadow-lg shadow-sapphire/20">
+          <a href="#appointment" className="bg-sapphire text-arctic px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-sapphire-light transition-all active:scale-95 shadow-lg shadow-sapphire/20">
             Book Consultation <Calendar size={18} />
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Trigger */}
@@ -57,9 +57,9 @@ const Navbar = () => {
               <a href="#services" onClick={() => setIsOpen(false)} className="text-slate font-medium py-2">Services</a>
               <a href="#about" onClick={() => setIsOpen(false)} className="text-slate font-medium py-2">Experience</a>
               <a href="#testimonials" onClick={() => setIsOpen(false)} className="text-slate font-medium py-2">Stories</a>
-              <button className="bg-sapphire text-arctic w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2">
+              <a href="#appointment" onClick={() => setIsOpen(false)} className="bg-sapphire text-arctic w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2">
                 Book Consultation <Calendar size={18} />
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
@@ -84,14 +84,14 @@ const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-white space-y-6"
         >
           <div className="inline-flex items-center gap-2 bg-champagne/20 text-champagne px-4 py-1 rounded-full text-sm font-semibold backdrop-blur-md border border-champagne/30">
             <Star size={14} fill="currentColor" /> 
             <span>The Gold Standard in Healthcare</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-playfair font-bold leading-[1.1] leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-playfair font-bold leading-tight">
             Precision Care.<br />
             <span className="text-gradient">Uncompromising Luxury.</span>
           </h1>
@@ -99,12 +99,12 @@ const Hero = () => {
             Experience a new era of medical excellence where clinical precision meets five-star hospitality. Specialized care designed around your comfort and well-being.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="bg-champagne text-sapphire px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:bg-champagne-light transition-all active:scale-95 shadow-xl shadow-champagne/30 group">
+            <a href="#appointment" className="bg-champagne text-sapphire px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:bg-champagne-light transition-all active:scale-95 shadow-xl shadow-champagne/30 group">
               Book Premium Consultation <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/30 hover:bg-white/10 transition-all backdrop-blur-sm">
+            </a>
+            <a href="#services" className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/30 hover:bg-white/10 transition-all backdrop-blur-sm text-center">
               Explore Services
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
@@ -114,10 +114,11 @@ const Hero = () => {
 
 const ServiceCard = ({ icon: Icon, title, description, color }) => (
   <motion.div 
-    whileHover={{ y: -10 }}
+    whileHover={{ y: -10, transition: { duration: 0.2 } }}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
     className="group p-8 rounded-3xl bg-white border border-slate-200 hover:border-champagne/50 transition-all cursor-pointer shadow-sm hover:shadow-xl hover:shadow-champagne/10"
   >
     <div className={`w-14 h-14 rounded-2xl ${color} flex items-center justify-center text-white mb-6 transition-transform group-hover:rotate-6`}>
@@ -125,7 +126,7 @@ const ServiceCard = ({ icon: Icon, title, description, color }) => (
     </div>
     <h3 className="text-2xl font-playfair font-bold text-sapphire mb-3">{title}</h3>
     <p className="text-slate mb-6 leading-relaxed">{description}</p>
-    <a href="#" className="text-sapphire font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+    <a href="#appointment" className="text-sapphire font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
       Learn More <ChevronRight size={16} />
     </a>
   </motion.div>
@@ -200,7 +201,9 @@ const ServicesHub = () => {
             </p>
           </div>
           <div className="relative z-10 flex items-center gap-2 font-bold text-champagne group-hover:translate-x-2 transition-transform">
-            View All Specializations <ChevronRight size={18} />
+            <a href="#appointment" className="flex items-center gap-2">
+              View All Specializations <ChevronRight size={18} />
+            </a>
           </div>
         </div>
       </div>
@@ -234,6 +237,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="relative"
         >
           <img 
@@ -258,6 +262,7 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="space-y-8"
         >
           <div className="text-champagne font-bold uppercase tracking-widest text-sm">The Luxury Experience</div>
@@ -319,6 +324,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm"
           >
             <div className="flex gap-4 items-start mb-6">
@@ -341,7 +347,7 @@ const Testimonials = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-sapphire text-arctic py-20 px-6">
+    <footer id="appointment" className="bg-sapphire text-arctic py-20 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="space-y-6">
           <div className="flex items-center gap-2">
@@ -362,20 +368,20 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-bold text-white uppercase text-sm tracking-widest">Specialties</h4>
             <ul className="space-y-2 text-arctic/60">
-              <li><a href="#" className="hover:text-champagne transition-colors">Family Dentistry</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Cosmetic Dentistry</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Eye Care</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Cardiac Care</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors"> la-Aviation Medicine</a></li>
+              <li><a href="#services" className="hover:text-champagne transition-colors">Family Dentistry</a></li>
+              <li><a href="#services" className="hover:text-champagne transition-colors">Cosmetic Dentistry</a></li>
+              <li><a href="#services" className="hover:text-champagne transition-colors">Eye Care</a></li>
+              <li><a href="#services" className="hover:text-champagne transition-colors">Cardiac Care</a></li>
+              <li><a href="#services" className="hover:text-champagne transition-colors">Aviation Medicine</a></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold text-white uppercase text-sm tracking-widest">Clinic</h4>
             <ul className="space-y-2 text-arctic/60">
-              <li><a href="#" className="hover:text-champagne transition-colors">Our Team</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Our Facility</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Patient Portal</a></li>
-              <li><a href="#" className="hover:text-champagne transition-colors">Contact</a></li>
+              <li><a href="#about" className="hover:text-champagne transition-colors">Our Team</a></li>
+              <li><a href="#about" className="hover:text-champagne transition-colors">Our Facility</a></li>
+              <li><a href="#appointment" className="hover:text-champagne transition-colors">Patient Portal</a></li>
+              <li><a href="#appointment" className="hover:text-champagne transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -383,10 +389,10 @@ const Footer = () => {
         <div className="space-y-6">
           <h4 className="font-bold text-white uppercase text-sm tracking-widest">Appointment</h4>
           <div className="bg-sapphire-light p-6 rounded-2xl border border-white/10">
-            <p className="text-arctic/80 text-sm mb-4">Ready for a la-premium experience? Book your slot now.</p>
-            <button className="w-full bg-champagne text-sapphire font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-champagne-light transition-all active:scale-95">
+            <p className="text-arctic/80 text-sm mb-4">Ready for a premium experience? Book your slot now.</p>
+            <a href="#appointment" className="w-full bg-champagne text-sapphire font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-champagne-light transition-all active:scale-95">
               Book Now <Calendar size={18} />
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -405,9 +411,9 @@ const FloatingCTA = () => {
       animate={{ opacity: 1, scale: 1 }}
       className="fixed bottom-6 right-6 z-50 md:hidden"
     >
-      <button className="bg-champagne text-sapphire p-4 rounded-full shadow-2xl shadow-champagne/40 flex items-center justify-center active:scale-90 transition-transform">
+      <a href="#appointment" className="bg-champagne text-sapphire p-4 rounded-full shadow-2xl shadow-champagne/40 flex items-center justify-center active:scale-90 transition-transform">
         <Calendar size={24} />
-      </button>
+      </a>
     </motion.div>
   );
 };
